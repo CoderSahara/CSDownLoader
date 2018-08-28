@@ -1,0 +1,6 @@
+framework module Pods_CSDownLoader_Example {
+  umbrella header "Pods-CSDownLoader_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

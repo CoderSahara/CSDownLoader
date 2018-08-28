@@ -1,0 +1,6 @@
+framework module CSDownLoader {
+  umbrella header "CSDownLoader-umbrella.h"
+
+  export *
+  module * { export * }
+}
