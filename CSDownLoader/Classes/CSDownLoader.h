@@ -22,7 +22,7 @@ typedef enum : NSUInteger {
 
 typedef void(^DownLoadInfoType)(long long fileSize);
 typedef void(^DownLoadSuccessType)(NSString *cacheFilePath);
-typedef void(^DownLoadFailType)();
+typedef void(^DownLoadFailType)(NSError *error);
 
 @interface CSDownLoader : NSObject
 

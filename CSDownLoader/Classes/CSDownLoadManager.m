@@ -65,16 +65,14 @@ static CSDownLoadManager *_shareInstance;
         if(successBlock) {
             successBlock(cacheFilePath);
         }
-    } failed:^{
+    } failed:^(NSError *error) {
         [weakSelf.downLoadInfo removeObjectForKey:md5];
         if (failedBlock) {
-            failedBlock();
+            failedBlock(error);
         }
     }];
     
     return ;
-    
-    
     
 }
 
@@ -96,12 +94,11 @@ static CSDownLoadManager *_shareInstance;
     __weak typeof(self) weakSelf = self;
     [downLoader downLoadWithURL:url downLoadInfo:nil success:^(NSString *cacheFilePath) {
         [weakSelf.downLoadInfo removeObjectForKey:md5];
-    } failed:^{
+    } failed:^(NSError *error) {
         [weakSelf.downLoadInfo removeObjectForKey:md5];
     }];
     
     return downLoader;
-    
 }
 
 

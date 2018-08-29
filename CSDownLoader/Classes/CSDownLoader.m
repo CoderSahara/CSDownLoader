@@ -240,7 +240,7 @@
         //        error.localizedDescription;
         self.state = CSDownLoaderStateFailed;
         if (self.downLoadError) {
-            self.downLoadError();
+            self.downLoadError(error);
         }
     }
     
