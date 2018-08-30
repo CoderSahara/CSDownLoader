@@ -46,7 +46,7 @@
 /* Begin PBXFileReference section */
 		03DB3057BAE3EF45F6819FEE4EA28954 /* Pods-CSDownLoader_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CSDownLoader_Example-frameworks.sh"; sourceTree = "<group>"; };
 		071CA749C9DE7312499DF0213EC3756D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E7C497D75EFB399EF16CD6EED697FA5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0E7C497D75EFB399EF16CD6EED697FA5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		10AB966760F2120112274F5B01F3235E /* CSDownLoader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CSDownLoader-dummy.m"; sourceTree = "<group>"; };
 		1195444FAF1A0819F174565C904E7B97 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		153533DBA285B23CBAEECA20C7E68E1A /* CSDownLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSDownLoader.m; path = CSDownLoader/Classes/CSDownLoader.m; sourceTree = "<group>"; };
@@ -64,15 +64,15 @@
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6AC82DCBA3D0314E7B1D309BAA17EA88 /* Pods-CSDownLoader_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CSDownLoader_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		792ACB5415EAA694DDE884E5CEA62E40 /* CSDownLoader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CSDownLoader-umbrella.h"; sourceTree = "<group>"; };
-		828A478E8055C5FF3B18DEABBA222499 /* CSDownLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSDownLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		828A478E8055C5FF3B18DEABBA222499 /* CSDownLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CSDownLoader.framework; path = CSDownLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87651C8CA79AA737E52533AF3A0B17B7 /* Pods-CSDownLoader_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CSDownLoader_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8A470FB780549CE3997F02FCE80FEFA3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8A470FB780549CE3997F02FCE80FEFA3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		90DC0B0BAEC8B074706A99E7FB10913A /* Pods-CSDownLoader_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CSDownLoader_Tests-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A63601B1F50242A7F198923B21CE24CA /* CSDownLoader.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CSDownLoader.podspec; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A63601B1F50242A7F198923B21CE24CA /* CSDownLoader.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CSDownLoader.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A747E822C699A011D287034B400778BA /* Pods-CSDownLoader_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CSDownLoader_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A88A9D6D939D5000251A543A8BB8BC7B /* CSDownLoadManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSDownLoadManager.m; path = CSDownLoader/Classes/CSDownLoadManager.m; sourceTree = "<group>"; };
-		AB4E9A632BE89DD67C03BEC1426A80D5 /* Pods_CSDownLoader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSDownLoader_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4E9A632BE89DD67C03BEC1426A80D5 /* Pods_CSDownLoader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CSDownLoader_Example.framework; path = "Pods-CSDownLoader_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01201378B441EAC4C06D90E8D62D24D /* Pods-CSDownLoader_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CSDownLoader_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BA030CAD31286224661E9F059ADA2070 /* Pods-CSDownLoader_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CSDownLoader_Example.modulemap"; sourceTree = "<group>"; };
 		BB5B39DC1F9BE6BBE9654C47C92AB3B9 /* CSDownLoader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CSDownLoader.xcconfig; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		D69D8119894C19CB15A550C49A018FBC /* CSDownLoaderFileTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSDownLoaderFileTool.m; path = CSDownLoader/Classes/CSDownLoaderFileTool.m; sourceTree = "<group>"; };
 		D941C52CD894A55016C56E6505E1A17B /* Pods-CSDownLoader_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CSDownLoader_Tests.modulemap"; sourceTree = "<group>"; };
 		E419BDA7EBFD927447554A2E7549C813 /* CSDownLoader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CSDownLoader.modulemap; sourceTree = "<group>"; };
-		EAFF135CD2CFD0A15F5131FE17538458 /* Pods_CSDownLoader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSDownLoader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAFF135CD2CFD0A15F5131FE17538458 /* Pods_CSDownLoader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CSDownLoader_Tests.framework; path = "Pods-CSDownLoader_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,13 +193,13 @@
 		9B984417A4479CEA546A49B9597F2818 /* CSDownLoader */ = {
 			isa = PBXGroup;
 			children = (
-				5D12E3BECCFB93D0234401311D838F47 /* Category */,
 				C7535A1A2C6BCB7F26BBC2CA3468F2FF /* CSDownLoader.h */,
 				153533DBA285B23CBAEECA20C7E68E1A /* CSDownLoader.m */,
 				CD6B4341A30A7298B2F64DA8511DDCCB /* CSDownLoaderFileTool.h */,
 				D69D8119894C19CB15A550C49A018FBC /* CSDownLoaderFileTool.m */,
 				47AFEC5A92C3A6C8472736C98DF191BA /* CSDownLoadManager.h */,
 				A88A9D6D939D5000251A543A8BB8BC7B /* CSDownLoadManager.m */,
+				5D12E3BECCFB93D0234401311D838F47 /* Category */,
 				FB1F9B2FD02E47FE0BE4E6FB04B67D6F /* Pod */,
 				CEF592D54A1D3CDF6B856B189F9EC696 /* Support Files */,
 			);

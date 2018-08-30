@@ -18,6 +18,10 @@
 
 @end
 
+#define URL1 [NSURL URLWithString:@"http://free2.macx.cn:8281/tools/photo/SnapNDragPro418.dmg"]
+#define URL2 [NSURL URLWithString:@"http://free2.macx.cn:8281/tools/photo/Sip44.dmg"]
+#define URL3 [NSURL URLWithString:@"http://47.93.29.84/xiuenai.mp4"]
+
 @implementation CSViewController
 
 - (NSURL *)url {
@@ -46,54 +50,83 @@
 
 - (IBAction)downLoad:(id)sender {
     
-    [[CSDownLoadManager shareInstance] downLoadWithURL:self.url withSuccess:^(NSString *cacheFilePath) {
-        NSLog(@"下载成功--%@", cacheFilePath);
+    [[CSDownLoadManager shareInstance] downLoader:URL3 downLoadInfo:^(long long fileSize) {
+        NSLog(@"2--下载信息--%lld", fileSize);
+    } progress:^(float progress) {
+        NSLog(@"2--下载进度--%f", progress);
+    } success:^(NSString *cacheFilePath) {
+        NSLog(@"2--下载成功--路径:%@", cacheFilePath);
     } failed:^(NSError *error) {
-        NSLog(@"下载失败");
+        NSLog(@"2--下载失败了 : \n错误码: %ld\n错误描述: %@", error.code, error.localizedDescription);
     }];
     
-    //    [self.downLoader downLoadWithURL:url];
+    [[CSDownLoadManager shareInstance] downLoader:URL1 downLoadInfo:^(long long fileSize) {
+        NSLog(@"下载信息--%lld", fileSize);
+    } progress:^(float progress) {
+        NSLog(@"下载进度--%f", progress);
+
+    } success:^(NSString *cacheFilePath) {
+        NSLog(@"下载成功--路径:%@", cacheFilePath);
+
+    } failed:^(NSError *error) {
+        NSLog(@"下载失败了 : \n错误码: %ld\n错误描述: %@", error.code, error.localizedDescription);
+
+    }];
     
-    //    [self.downLoader downLoadWithURL:url downLoadInfo:^(long long fileSize) {
-    //        NSLog(@"%lld", fileSize);
-    //    } success:^(NSString *cacheFilePath) {
-    //        NSLog(@"%@", cacheFilePath);
-    //    } failed:^{
-    //        NSLog(@"下载失败");
-    //    }];
     
-    
-    //    [self.downLoader setDownLoadInfo:^(long long totalSize) {
-    //        NSLog(@"%lld", totalSize);
-    //    }];
-    //
-    //    [self.downLoader setDownLoadProgress:^(float progress) {
-    //        NSLog(@"%f", progress);
-    //    }];
-    
+//    [self.downLoader downLoadWithURL:url];
+//    [self.downLoader downLoader:url downLoadInfo:^(long long fileSize) {
+//        NSLog(@"下载信息--%lld", fileSize);
+//
+//    } progress:^(float progress) {
+//        NSLog(@"下载进度--%f", progress);
+//
+//    } success:^(NSString *cacheFilePath) {
+//        NSLog(@"下载成功--路径:%@", cacheFilePath);
+//
+//    } failed:^(NSError *error) {
+//        NSLog(@"下载失败了 : \n错误码: %ld\n错误描述: %@", error.code, error.localizedDescription);
+//
+//    }];
+//
+//    [self.downLoader setDownLoadStateChange:^(CSDownLoaderState state) {
+//        NSLog(@"---%zd", state);
+//    }];
 }
 - (IBAction)resume:(id)sender {
-    //    [self.downLoader resume];
-    //    [[CSDownLoadManager shareInstance] :self.url];
+//    [self.downLoader resume];
+    NSLog(@"--%s--", __func__);
+    [[CSDownLoadManager shareInstance] resumeAll];
+//    [[CSDownLoadManager shareInstance] resumeDownLoadWithURL:URL3];
 }
+
 - (IBAction)pause:(id)sender {
-    [[CSDownLoadManager shareInstance] pauseWithURL:self.url];
+//    [self.downLoader pause];
+    NSLog(@"--%s--", __func__);
+    [[CSDownLoadManager shareInstance] pauseAll];
+//    [[CSDownLoadManager shareInstance] pauseWithURL:URL3]
 }
+
 - (IBAction)cancel:(id)sender {
-    [self.downLoader cancel];
+//    [self.downLoader cancel];
+//    [self.downLoader cancelAndClearCache];
+    NSLog(@"--%s--", __func__);
+//    [[CSDownLoadManager shareInstance] cancelWithURL:URL1];
+//    [[CSDownLoadManager shareInstance] cancelAll];
+    [[CSDownLoadManager shareInstance] cancelAllDownloadsAndCleanAllCaches];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self timer];
+//    [self timer];
 }
 
 - (void)update {
     
     
-    //    NSLog(@"%zd", self.downLoader.state);
-    //    NSLog(@"%f", self.downLoader.progress);
+//        NSLog(@"%zd", self.downLoader.state);
+//        NSLog(@"%f", self.downLoader.progress);
     
 }
 

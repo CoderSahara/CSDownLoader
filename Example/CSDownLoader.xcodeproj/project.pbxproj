@@ -37,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C93456DA2229AE929B7713E /* CSDownLoader.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CSDownLoader.podspec; path = ../CSDownLoader.podspec; sourceTree = "<group>"; };
+		0C93456DA2229AE929B7713E /* CSDownLoader.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CSDownLoader.podspec; path = ../CSDownLoader.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		303E88290FDB840C67889020 /* Pods_CSDownLoader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSDownLoader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40610D0C1D9B7735BBC868D5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		40610D0C1D9B7735BBC868D5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		51297B3B4996A5956B812737 /* Pods-CSDownLoader_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSDownLoader_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSDownLoader_Example/Pods-CSDownLoader_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* CSDownLoader_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSDownLoader_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,7 +64,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E9596F3C22C072952586BBC /* Pods-CSDownLoader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSDownLoader_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSDownLoader_Example/Pods-CSDownLoader_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8FB198D0EE381C07C1CD35D1 /* Pods-CSDownLoader_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSDownLoader_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSDownLoader_Tests/Pods-CSDownLoader_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E65C9CF6A4AB1ACEF38C212A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E65C9CF6A4AB1ACEF38C212A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E811122565749A44EE0C6493 /* Pods_CSDownLoader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSDownLoader_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06D5B80782A8F36241745F6 /* Pods-CSDownLoader_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSDownLoader_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSDownLoader_Tests/Pods-CSDownLoader_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */

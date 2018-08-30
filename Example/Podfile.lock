@@ -1,5 +1,5 @@
 PODS:
-  - CSDownLoader (0.1.0)
+  - CSDownLoader (0.1.1)
 
 DEPENDENCIES:
   - CSDownLoader (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CSDownLoader: 3aa47375965c321d9e8e55d17d67950d5a173a85
+  CSDownLoader: adf7d4fa719ce47408f4651573fece5b1229c143
 
 PODFILE CHECKSUM: da9357ce22e073dfbdb1dc300d5aab1e2bc7d7a2
 
