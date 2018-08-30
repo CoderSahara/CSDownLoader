@@ -17,8 +17,10 @@
     
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
     
+    // 作用: 把c语言的字符串 -> md5 c字符串
     CC_MD5(data, (CC_LONG)strlen(data), digest);
     
+    // 32
     NSMutableString *result = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     
     for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i ++) {

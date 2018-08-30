@@ -31,49 +31,59 @@
 /** 下载任务 */
 @property (nonatomic, weak) NSURLSessionDataTask *task;
 
+@property (nonatomic, weak) NSURL *url;
+    
 @end
 
 
 @implementation CSDownLoader
 
 
-#pragma mark - 接口
+#pragma mark - interface
 
-- (void)downLoadWithURL: (NSURL *)url downLoadInfo: (DownLoadInfoType)downLoadBlock success: (DownLoadSuccessType)successBlock failed: (DownLoadFailType)failBlock {
++ (NSString *)downLoadedFileWithURL: (NSURL *)url {
     
-    self.downLoadInfo = downLoadBlock;
+    NSString *cacheFilePath = [kCache stringByAppendingPathComponent:url.lastPathComponent];
+    
+    if([CSDownLoaderFileTool isFileExists:cacheFilePath]) {
+        return cacheFilePath;
+    }
+    return nil;
+    
+}
+    
++ (long long)tmpCacheSizeWithURL: (NSURL *)url {
+    
+    NSString *tmpFileMD5 = [url.absoluteString md5Str];
+    NSString *tmpPath = [kTmp stringByAppendingPathComponent:tmpFileMD5];
+    return  [CSDownLoaderFileTool fileSizeWithPath:tmpPath];
+}
+    
++ (void)clearCacheWithURL: (NSURL *)url {
+    NSString *cachePath = [kCache stringByAppendingPathComponent:url.lastPathComponent];
+    [CSDownLoaderFileTool removeFileAtPath:cachePath];
+}
+    
+- (void)downLoader:(NSURL *)url downLoadInfo:(DownLoadInfoType)downLoadInfo progress:(ProgressBlockType)progressBlock success:(DownLoadSuccessType)successBlock failed:(DownLoadFailType)failedBlock {
+    
+    // 1. 给所有的block赋值
+    self.downLoadInfo = downLoadInfo;
+    self.downLoadProgress = progressBlock;
     self.downLoadSuccess = successBlock;
-    self.downLoadError = failBlock;
+    self.downLoadError = failedBlock;
     
+    // 2. 开始下载
     [self downLoadWithURL:url];
     
 }
 
 - (void)downLoadWithURL: (NSURL *)url {
     
-    // 1. 下载文件的存储
-    //    下载中 -> tmp + (url + MD5)
-    //    下载完成 -> cache + url.lastCompent
-    self.cacheFilePath = [kCache stringByAppendingPathComponent:url.lastPathComponent];
-    self.tmpFilePath = [kTmp stringByAppendingPathComponent:[url.absoluteString md5Str]];
+    // 内部实现
+    // 1. 真正的从头开始下载
+    // 2. 如果任务存在了, 继续下载
     
-    // 1 首先, 判断, 本地有没有已经下载好, 已经下载完毕, 就直接返回
-    // 文件的位置, 文件的大小
-    if ([CSDownLoaderFileTool isFileExists:self.cacheFilePath]) {
-        NSLog(@"文件已经下载完毕, 直接返回相应的数据--文件的具体路径, 文件的大小");
-        
-        if (self.downLoadInfo) {
-            self.downLoadInfo([CSDownLoaderFileTool fileSizeWithPath:self.cacheFilePath]);
-        }
-        
-        self.state = CSDownLoaderStateSuccess;
-        
-        if (self.downLoadSuccess) {
-            self.downLoadSuccess(self.cacheFilePath);
-        }
-        
-        return;
-    }
+    self.url = url;
     
     // 验证: 如果当前任务不存在 -> 开启任务
     if ([url isEqual:self.task.originalRequest.URL]) {
@@ -93,16 +103,53 @@
         // 取消, 重新下载 == 失败
     }
     
-    // 任务不存在, url不一样
+    // 两种: 1. 任务不存在  2. 任务存在, 但是任务的url地址不同
+    
     [self cancel];
-    // 2. 读取本地的缓存大小
+    
+    // 1. 获取文件名称, 指明路径, 开启一个新的下载任务
+    
+    //    下载文件的存储
+    //    下载中 -> tmp + (url + MD5)
+    //    下载完成 -> cache + url.lastCompent
+    self.cacheFilePath = [kCache stringByAppendingPathComponent:url.lastPathComponent];
+    self.tmpFilePath = [kTmp stringByAppendingPathComponent:[url.absoluteString md5Str]];
+    
+    // 2. 首先, 判断, 本地有没有已经下载好, 已经下载完毕, 就直接返回
+    // 文件的位置, 文件的大小
+    if ([CSDownLoaderFileTool isFileExists:self.cacheFilePath]) {
+        NSLog(@"文件已经下载完毕, 直接返回相应的数据--文件的具体路径, 文件的大小");
+        
+        if (self.downLoadInfo) {
+            self.downLoadInfo([CSDownLoaderFileTool fileSizeWithPath:self.cacheFilePath]);
+        }
+        
+        if (self.downLoadProgress) {
+            self.downLoadProgress(1.f);
+        }
+        
+        self.state = CSDownLoaderStateSuccess;
+        
+        return;
+    }
+    
+    // 3. 判断临时文件是否存在, 不存在则从0开始下载,
+    //    存在则拿到文件的大小,从上次结束的位置开始下载
+    if (![CSDownLoaderFileTool isFileExists:self.tmpFilePath]) {
+        
+        // 从0字节开始请求资源
+        [self downLoadWithURL:url offset:0];
+        return;
+    }
+    
+    // 读取本地的缓存大小
     _tmpFileSize = [CSDownLoaderFileTool fileSizeWithPath:self.tmpFilePath];
     [self downLoadWithURL:url offset:_tmpFileSize];
 }
 
 // 暂停了几次, 恢复几次, 才可以恢复
 - (void)resume {
-    if (self.state == CSDownLoaderStatePause) {
+    if (self.task && self.state == CSDownLoaderStatePause) {
         [self.task resume];
         self.state = CSDownLoaderStateDowning;
     }
@@ -119,14 +166,14 @@
     
 }
 
-// 取消, 这次任务已经被取消, 缓存删除
+// 取消当前任务
 - (void)cancel {
+    self.state = CSDownLoaderStatePause;
     [self.session invalidateAndCancel];
     self.session = nil;
-    
-    //    self.state = CSDownLoaderStateFailed;
 }
 
+// 取消下载, 并统一清理缓存
 - (void)cancelAndClearCache {
     [self cancel];
     
@@ -137,38 +184,42 @@
 
 
 
-#pragma mark - 私有方法
+#pragma mark - private method
 - (void)downLoadWithURL:(NSURL *)url offset: (long long)offset {
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:0];
+    // 通过控制range, 控制请求资源字节区间
     [request setValue:[NSString stringWithFormat:@"bytes=%lld-", offset] forHTTPHeaderField:@"Range"];
-    NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request];
-    [task resume];
-    self.task = task;
-    
-    
+    // session 分配的task, 默认状况, 挂起状态
+    self.task = [self.session dataTaskWithRequest:request];
+    [self resume];
 }
 
 
 #pragma mark - NSURLSessionDataDelegate
 
-
 /**
- 当发送的请求, 第一次接受到响应的时候调用,
- 
- @param completionHandler 系统传递给我们的一个回调代码块, 我们可以通过这个代码块, 来告诉系统,如何处理, 接下来的数据
+ 当发送的请求, 第一次接收到响应的时候调用(响应头, 并没有具体的资源内容)
+ 通过这个方法里面系统提供的回调代码块, 可以控制, 是继续请求, 还是取消本次请求
+
+ @param session 会话
+ @param dataTask 任务
+ @param response 响应头信息
+ @param completionHandler 系统回调代码块, 通过它可以控制是否继续接收数据
  */
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
-{
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler {
     
+    // 获取资源总大小
+    // 1. 从Content-Length 取出来
+    // 2. 如果 Content-Range 有, 应该从Content-Range里面获取
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
     _totalFileSize = [httpResponse.allHeaderFields[@"Content-Length"] longLongValue];
-    if (httpResponse.allHeaderFields[@"Content-Range"]) {
-        NSString *rangeStr = httpResponse.allHeaderFields[@"Content-Range"] ;
-        _totalFileSize = [[[rangeStr componentsSeparatedByString:@"/"] lastObject] longLongValue];
-        
+    NSString *contentRangeStr = httpResponse.allHeaderFields[@"Content-Range"];
+    if (contentRangeStr && contentRangeStr.length != 0) {
+        _totalFileSize = [[[contentRangeStr componentsSeparatedByString:@"/"] lastObject] longLongValue];
     }
     
+    // 传递给外界 : 总大小 & 本地存储的文件路径
     if (self.downLoadInfo) {
         self.downLoadInfo(_totalFileSize);
     }
@@ -178,10 +229,11 @@
     // 缓存大小 == 文件的总大小 下载完成 -> 移动到下载完成的文件夹
     if (_tmpFileSize == _totalFileSize) {
         NSLog(@"文件已经下载完成, 移动数据");
-        // 移动临时缓存的文件 -> 下载完成的路径
+        // 1. 移动临时缓存的文件 -> 下载完成的路径
         [CSDownLoaderFileTool moveFile:self.tmpFilePath toPath:self.cacheFilePath];
+        // 2. 修改状态
         self.state = CSDownLoaderStateSuccess;
-        // 取消请求
+        // 3. 取消请求
         completionHandler(NSURLSessionResponseCancel);
         return;
     }
@@ -189,21 +241,23 @@
     if (_tmpFileSize > _totalFileSize) {
         
         NSLog(@"缓存有问题, 删除缓存, 重新下载");
-        // 删除缓存
+        // 1. 删除临时缓存
         [CSDownLoaderFileTool removeFileAtPath:self.tmpFilePath];
         
-        // 取消请求
+        // 2. 取消请求
         completionHandler(NSURLSessionResponseCancel);
         
-        // 重新发送请求  0
-        [self downLoadWithURL:response.URL offset:0];
+        // 3. 从 0 开始下载
+        [self downLoadWithURL:response.URL];
+//        [self downLoadWithURL:response.URL offset:0];
         return;
         
     }
     
-    // 继续接收数据,什么都不要处理
     NSLog(@"继续接收数据");
     self.state = CSDownLoaderStateDowning;
+    // 继续接收数据
+    // 确定开始下载数据
     self.outputStream = [NSOutputStream outputStreamToFileAtPath:self.tmpFilePath append:YES];
     [self.outputStream open];
     
@@ -211,43 +265,70 @@
 }
 
 
-// 接收数据的时候调用
-// 100M
+/**
+ 用户确定, 继续接收数据的时候调用
+
+ @param session 会话
+ @param dataTask 任务
+ @param data 接收到的一段数据
+ */
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
 {
     // 进度 = 当前下载的大小 / 总大小
     _tmpFileSize += data.length;
     self.progress = 1.0 * _tmpFileSize / _totalFileSize;
+    // 往输出流中写入数据 (节省内存)
     [self.outputStream write:data.bytes maxLength:data.length];
+//    NSLog(@"数据接收中...");
 }
 
+
+/**
+ 请求完成时调用
+ 请求完成时调用( != 请求成功/失败)
+
+ @param session 会话
+ @param task 任务
+ @param error 错误
+ */
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
     [self.outputStream close];
     self.outputStream = nil;
     
     if (error == nil) {
-        NSLog(@"下载完毕, 成功");
+        // 不一定是成功
+        // 数据是肯定可以请求完毕
+        // 判断, 本地缓存 == 文件总大小 {filename : filesize: md5:xxx}
+        // 如果等于 => 验证, 是否文件完整(file md5)
+        
         // 移动数据  temp - > cache
         [CSDownLoaderFileTool moveFile:self.tmpFilePath toPath:self.cacheFilePath];
+        // 改变状态
         self.state = CSDownLoaderStateSuccess;
-        if (self.downLoadSuccess) {
-            self.downLoadSuccess(self.cacheFilePath);
-        }
+        
     }else {
-        NSLog(@"有错误---");
         //        error.code
         //        error.localizedDescription;
-        self.state = CSDownLoaderStateFailed;
-        if (self.downLoadError) {
-            self.downLoadError(error);
+        NSLog(@"有错误---%zd--%@", error.code, error.localizedDescription);
+        
+        // 取消, 断网
+        // 999 != 999
+        if (-999 == error.code) {
+            self.state = CSDownLoaderStatePause;
+        }else {
+            self.state = CSDownLoaderStateFailed;
+            if (self.downLoadError) {
+                self.downLoadError(error);
+            }
         }
+        
     }
     
     
 }
 
-#pragma mark - 懒加载
+#pragma mark - lazy load
 
 - (NSURLSession *)session {
     if (!_session) {
@@ -266,6 +347,18 @@
     if (self.downLoadStateChange) {
         self.downLoadStateChange(state);
     }
+    
+    if (_state == CSDownLoaderStateSuccess && self.downLoadSuccess) {
+        self.downLoadSuccess(self.cacheFilePath);
+    }
+    
+    if (self.url && self.url.lastPathComponent) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDownLoadURLOrStateChangeNotification object:nil userInfo:@{
+                                                                                                                               @"downLoadURL": self.url,
+                                                                                                                               @"downLoadState": @(self.state)
+                                                                                                                               }];
+    }
+    
 }
 
 

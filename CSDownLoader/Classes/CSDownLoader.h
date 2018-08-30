@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kDownLoadURLOrStateChangeNotification @"downLoadURLOrStateChangeNotification"
+
 typedef enum : NSUInteger {
     CSDownLoaderStateUnKnown,
     /** 下载暂停 */
@@ -21,15 +23,19 @@ typedef enum : NSUInteger {
 } CSDownLoaderState;
 
 typedef void(^DownLoadInfoType)(long long fileSize);
+typedef void(^ProgressBlockType)(float progress);
 typedef void(^DownLoadSuccessType)(NSString *cacheFilePath);
 typedef void(^DownLoadFailType)(NSError *error);
+typedef void(^StateChangeType)(CSDownLoaderState state);
 
+// 一个下载器, 对应一个下载任务
+// CSDownLoader -> url
 @interface CSDownLoader : NSObject
-
+    
 // 如果当前已经下载, 继续下载, 如果没有下载, 从头开始下载
 - (void)downLoadWithURL: (NSURL *)url;
 
-- (void)downLoadWithURL: (NSURL *)url downLoadInfo: (DownLoadInfoType)downLoadBlock success: (DownLoadSuccessType)successBlock failed: (DownLoadFailType)failBlock;
+- (void)downLoader:(NSURL *)url downLoadInfo:(DownLoadInfoType)downLoadInfo progress:(ProgressBlockType)progressBlock success:(DownLoadSuccessType)successBlock failed:(DownLoadFailType)failedBlock;
 
 // 恢复下载
 - (void)resume;
@@ -38,18 +44,20 @@ typedef void(^DownLoadFailType)(NSError *error);
 - (void)pause;
 
 
-// 取消, 这次任务已经被取消,
+// 取消任务
 - (void)cancel;
 
-// 缓存删除
+// 取消任务,并且缓存删除
 - (void)cancelAndClearCache;
 
 // kvo , 通知, 代理, block
 @property (nonatomic, assign) CSDownLoaderState state;
+    
+// 进度
 @property (nonatomic, assign) float progress;
 
-
-@property (nonatomic, copy) void(^downLoadProgress)(float progress);
+// 下载进度
+@property (nonatomic, copy) ProgressBlockType downLoadProgress;
 
 // 文件下载信息 (下载的大小)
 @property (nonatomic, copy) DownLoadInfoType downLoadInfo;

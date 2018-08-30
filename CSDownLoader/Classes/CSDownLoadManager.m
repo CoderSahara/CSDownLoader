@@ -9,7 +9,7 @@
 #import "CSDownLoadManager.h"
 #import "NSString+CSDownLoader.h"
 
-@interface CSDownLoadManager()
+@interface CSDownLoadManager()<NSCopying, NSMutableCopying>
 
 @property (nonatomic, strong) NSMutableDictionary <NSString *, CSDownLoader *>*downLoadInfo;
 
@@ -39,7 +39,15 @@ static CSDownLoadManager *_shareInstance;
     return _shareInstance;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return _shareInstance;
+}
 
+- (id)mutableCopyWithZone:(NSZone *)zone {
+    return _shareInstance;
+}
+
+// key: md5(url)  value: CSDownLoader
 - (NSMutableDictionary *)downLoadInfo {
     if (!_downLoadInfo) {
         _downLoadInfo = [NSMutableDictionary dictionary];
@@ -47,33 +55,40 @@ static CSDownLoadManager *_shareInstance;
     return _downLoadInfo;
 }
 
-- (void)downLoadWithURL: (NSURL *)url withSuccess: (DownLoadSuccessType)successBlock failed: (DownLoadFailType)failedBlock {
+- (void)downLoader:(NSURL *)url downLoadInfo:(DownLoadInfoType)downLoadInfo progress:(ProgressBlockType)progressBlock success:(DownLoadSuccessType)successBlock failed:(DownLoadFailType)failedBlock {
     
+    // 1. url
     NSString *md5 = [url.absoluteString md5Str];
     
+    // 2. 根据 urlMD5, 查找响应的下载器
     CSDownLoader *downLoader = self.downLoadInfo[md5];
-    if (downLoader) {
-        [downLoader resume];
-        return ;
+    
+    // 下载器不存在
+    if (downLoader == nil) {
+        downLoader = [[CSDownLoader alloc] init];
+        self.downLoadInfo[md5] = downLoader;
     }
-    downLoader = [[CSDownLoader alloc] init];
-    [self.downLoadInfo setValue:downLoader forKey:md5];
+    
+//    [self.downLoadInfo setValue:downLoader forKey:md5];
     
     __weak typeof(self) weakSelf = self;
-    [downLoader downLoadWithURL:url downLoadInfo:nil success:^(NSString *cacheFilePath) {
+    [downLoader downLoader:url downLoadInfo:downLoadInfo progress:progressBlock success:^(NSString *cacheFilePath) {
+        
         [weakSelf.downLoadInfo removeObjectForKey:md5];
         if(successBlock) {
             successBlock(cacheFilePath);
         }
+        
     } failed:^(NSError *error) {
+        
         [weakSelf.downLoadInfo removeObjectForKey:md5];
         if (failedBlock) {
             failedBlock(error);
         }
+        
     }];
     
     return ;
-    
 }
 
 - (CSDownLoader *)downLoadWithURL: (NSURL *)url
@@ -84,23 +99,32 @@ static CSDownLoadManager *_shareInstance;
     NSString *md5 = [url.absoluteString md5Str];
     
     CSDownLoader *downLoader = self.downLoadInfo[md5];
-    if (downLoader) {
-        [downLoader resume];
-        return downLoader;
+    if (downLoader == nil) {
+        downLoader = [[CSDownLoader alloc] init];
+        self.downLoadInfo[md5] = downLoader;
     }
-    downLoader = [[CSDownLoader alloc] init];
-    [self.downLoadInfo setValue:downLoader forKey:md5];
+
+//    [self.downLoadInfo setValue:downLoader forKey:md5];
     
     __weak typeof(self) weakSelf = self;
-    [downLoader downLoadWithURL:url downLoadInfo:nil success:^(NSString *cacheFilePath) {
+    [downLoader downLoader:url downLoadInfo:nil progress:nil success:^(NSString *cacheFilePath) {
+        
         [weakSelf.downLoadInfo removeObjectForKey:md5];
+
     } failed:^(NSError *error) {
+        
         [weakSelf.downLoadInfo removeObjectForKey:md5];
+
     }];
     
     return downLoader;
 }
 
+- (CSDownLoader *)getDownLoaderWithURL: (NSURL *)url {
+    NSString *md5 = [url.absoluteString md5Str];
+    CSDownLoader *downLoader = self.downLoadInfo[md5];
+    return downLoader;
+}
 
 - (void)pauseWithURL: (NSURL *)url {
     
@@ -109,17 +133,60 @@ static CSDownLoadManager *_shareInstance;
     [downLoader pause];
     
 }
+    
+- (void)resumeDownLoadWithURL:(NSURL *)url {
+    
+    NSString *md5 = [url.absoluteString md5Str];
+    CSDownLoader *downLoader = self.downLoadInfo[md5];
+    [downLoader resume];
+}
 
 - (void)cancelWithURL: (NSURL *)url {
+    
     NSString *md5 = [url.absoluteString md5Str];
     CSDownLoader *downLoader = self.downLoadInfo[md5];
     [downLoader cancel];
 }
 
+- (void)cancelAndClearWithURL:(NSURL *)url {
+    
+    NSString *md5 = [url.absoluteString md5Str];
+    CSDownLoader *downLoader = self.downLoadInfo[md5];
+    [downLoader cancelAndClearCache];
+}
+
 - (void)pauseAll {
     
-    [[self.downLoadInfo allValues] makeObjectsPerformSelector:@selector(pause)];
+    if (self.downLoadInfo.allValues && self.downLoadInfo.allValues.count) {
+        [[self.downLoadInfo allValues] makeObjectsPerformSelector:@selector(pause)];
+//        [self.downLoadInfo.allValues performSelector:@selector(pause) withObject:nil];
+    }
     
 }
 
+- (void)resumeAll {
+    
+    if (self.downLoadInfo.allValues && self.downLoadInfo.allValues.count) {
+        [[self.downLoadInfo allValues] makeObjectsPerformSelector:@selector(resume)];
+//        [self.downLoadInfo.allValues performSelector:@selector(resume) withObject:nil];
+    }
+    
+}
+
+- (void)cancelAll {
+    
+    if (self.downLoadInfo.allValues && self.downLoadInfo.allValues.count) {
+        [[self.downLoadInfo allValues] makeObjectsPerformSelector:@selector(cancel)];
+        //        [self.downLoadInfo.allValues performSelector:@selector(cancel) withObject:nil];
+    }
+}
+
+- (void)cancelAllDownloadsAndCleanAllCaches {
+    
+    if (self.downLoadInfo.allValues && self.downLoadInfo.allValues.count) {
+        [[self.downLoadInfo allValues] makeObjectsPerformSelector:@selector(cancelAndClearCache)];
+//        [self.downLoadInfo.allValues performSelector:@selector(cancelAndClearCache) withObject:nil];
+    }
+}
+    
 @end
