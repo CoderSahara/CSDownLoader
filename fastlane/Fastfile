@@ -20,6 +20,16 @@ git_commit(path: ".", message: "版本升级维护")
 #    git push origin master
 push_to_git_remote
 
+# 验证tag是否存在, 如果存在, 应该删除本地标签和远程标签
+# if 判断标签是否存在
+#      执行删除本地和远程标签
+#end
+
+if git_tag_exists(tag: tagName)
+    UI.message("发现tag: #{tagName} 已经存在, 即将执行删除动作 🚀")
+    remove_tag(tag:tagName)
+end
+
 # 3. git tag 标签名称
 add_git_tag(
 tag: tagName
