@@ -28,8 +28,8 @@ tags: false     # optional, default: true
 #end
 
 if git_tag_exists(tag: tagName)
-UI.message("发现tag: #{tagName} 已经存在, 即将执行删除动作 🚀")
-remove_tag(tag:tagName)
+    UI.message("发现tag: #{tagName} 已经存在, 即将执行删除动作 🚀")
+    remove_tag(tag:tagName)
 end
 
 # 3. git tag 标签名称
