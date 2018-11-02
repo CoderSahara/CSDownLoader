@@ -10,10 +10,10 @@
 #endif
 #endif
 
-#import "NSString+CSDownLoader.h"
 #import "CSDownLoader.h"
 #import "CSDownLoaderFileTool.h"
 #import "CSDownLoadManager.h"
+#import "NSString+CSDownLoader.h"
 
 FOUNDATION_EXPORT double CSDownLoaderVersionNumber;
 FOUNDATION_EXPORT const unsigned char CSDownLoaderVersionString[];

@@ -34,7 +34,7 @@ if ENV['IS_SOURCE'] || ENV['CSDownLoader']
     s.source_files = 'CSDownLoader/Classes/**/*'
 else
     s.source_files = 'CSDownLoader/Classes/**/*.h'
-    s.vendored_frameworks = 'CSDownLoader/Products/CSDownLoader'
+    s.vendored_frameworks = 'CSDownLoader/Products/CSDownLoader.framework'
 end
 
 

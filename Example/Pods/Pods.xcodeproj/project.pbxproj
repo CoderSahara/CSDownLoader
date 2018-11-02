@@ -7,20 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07F0AC582C54DB99ECD6229A9C4366D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		210628673FED0C5195B2ED33E77DCE74 /* NSString+CSDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 506F17E77B9080E710DE240E951E6528 /* NSString+CSDownLoader.m */; };
 		2A35C4CA6E1CA84A1EEC6A21B4EA1DBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		36F6844EEA922F2ED74888799FE98C37 /* Pods-CSDownLoader_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE997EF676B33FA9CF7509E40B5713BA /* Pods-CSDownLoader_Example-dummy.m */; };
+		3D5E3D22D702CC48C9695FF1120620D4 /* CSDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5425E0B1F18E64A244C8AD412333DC45 /* CSDownLoadManager.m */; };
+		45F63D7A6FBAE4C7C7F57C5C872D4058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		4934627CAEA24872936E6BA90711A701 /* CSDownLoaderFileTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8947A3708801ACD161C4B65C272F27 /* CSDownLoaderFileTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FF57929D736DD99BDBEE0D7CEBB9E4D /* Pods-CSDownLoader_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 154D75F911DCF1212BFAE1272E202161 /* Pods-CSDownLoader_Tests-dummy.m */; };
-		7347A9AD13443BF4CDF8AC02F87F7B86 /* Pods-CSDownLoader_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21BD558202FDF1225829E6DAA384A4CE /* Pods-CSDownLoader_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83CB3235D90C2D16FD9E69AB5E9572FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		5A507C6FBF1B967EEBCD9E305282CF8C /* CSDownLoaderFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A0AE4FA8821BD22375697182191317 /* CSDownLoaderFileTool.m */; };
+		5D7ACC1A2B77D7F7C447BD7A86402E31 /* CSDownLoader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B46D2D5AD1567CAF6A86EEF8B6D50 /* CSDownLoader-dummy.m */; };
 		901D6D50D4A15A0A2C1C0B764D463369 /* Pods-CSDownLoader_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90DC0B0BAEC8B074706A99E7FB10913A /* Pods-CSDownLoader_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD5E883D54F8B078C3B60F5BC55F9B87 /* Pods-CSDownLoader_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE997EF676B33FA9CF7509E40B5713BA /* Pods-CSDownLoader_Example-dummy.m */; };
+		9D457EBBF9D8CA7BFDF49D947E442A49 /* Pods-CSDownLoader_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21BD558202FDF1225829E6DAA384A4CE /* Pods-CSDownLoader_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A70A69AA3402EDE2A60DA1B6C0FB0B68 /* CSDownLoader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A28522574FED3563F254DA815F599743 /* CSDownLoader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C24F2AC9010F74354A121E49548A6D54 /* CSDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C08E83EB014C803560E56FE592F372 /* CSDownLoader.m */; };
+		C808DF8AC96DA1530BBCF44B8D15C992 /* CSDownLoadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BEAC5E9F06E38347EC5800B2E9BA02A0 /* CSDownLoadManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D576C720C39746F949647137DDA54B8D /* CSDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = D10A4091E654211A47EDF1113FEFE6B0 /* CSDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E150E6AD7D980BB284ADA9DFF2662C00 /* NSString+CSDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = C0F66C26AE7ACB2F271C0D420AC05D79 /* NSString+CSDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1A7197AEB45A10C6127F037F58A10E95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B0CC8FECC7E17352865F49B705152A9;
+			remoteInfo = CSDownLoader;
+		};
 		247124BB3C1A1DAB92010858EC99461C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D7D2D87E38EE7C34FE6931244F828FE1;
+			remoteGlobalIDString = 71CA6D69C0BEB207EE74F980F3F1E16C;
 			remoteInfo = "Pods-CSDownLoader_Example";
 		};
 /* End PBXContainerItemProxy section */
@@ -28,36 +46,46 @@
 /* Begin PBXFileReference section */
 		03DB3057BAE3EF45F6819FEE4EA28954 /* Pods-CSDownLoader_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CSDownLoader_Example-frameworks.sh"; sourceTree = "<group>"; };
 		071CA749C9DE7312499DF0213EC3756D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0ED9A797AEEC8E46032B1FB398388CF7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		1195444FAF1A0819F174565C904E7B97 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13F5E96EED00A188A9DA9B369F528AE1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		154D75F911DCF1212BFAE1272E202161 /* Pods-CSDownLoader_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CSDownLoader_Tests-dummy.m"; sourceTree = "<group>"; };
 		186A4A21423BE1280B295004B5EF0598 /* Pods-CSDownLoader_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CSDownLoader_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1872736FE73CC77C1DC152ED55B2C975 /* Pods-CSDownLoader_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CSDownLoader_Tests-resources.sh"; sourceTree = "<group>"; };
-		18EAD31ED0F520EE2D26615315CBF8BA /* CSDownLoader.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CSDownLoader.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		21BD558202FDF1225829E6DAA384A4CE /* Pods-CSDownLoader_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CSDownLoader_Example-umbrella.h"; sourceTree = "<group>"; };
-		2306C9612EA69BD2BCD6D9FF887A482B /* Pods_CSDownLoader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CSDownLoader_Tests.framework; path = "Pods-CSDownLoader_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C08E83EB014C803560E56FE592F372 /* CSDownLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSDownLoader.m; path = CSDownLoader/Classes/CSDownLoader.m; sourceTree = "<group>"; };
 		2B7DBCFD9593F4C02E80998AE029FB2A /* Pods-CSDownLoader_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CSDownLoader_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		2E433DCB073B5ADA774F98201715D6D0 /* Pods-CSDownLoader_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CSDownLoader_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		37B7D2C13DF44936AFFBEC52FED3E24F /* Pods-CSDownLoader_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CSDownLoader_Example-resources.sh"; sourceTree = "<group>"; };
-		3BC049356A2CA97698F855EC9F00B9E8 /* CSDownLoaderFileTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSDownLoaderFileTool.h; path = CSDownLoader/Classes/CSDownLoaderFileTool.h; sourceTree = "<group>"; };
-		406AB48DC3788077723A1D7EB2880D25 /* Pods_CSDownLoader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CSDownLoader_Example.framework; path = "Pods-CSDownLoader_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50C7D0CCCD4B0F44D4E2E82150805D34 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		67A0422464E916AADF8F38615F941D50 /* CSDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSDownLoader.h; path = CSDownLoader/Classes/CSDownLoader.h; sourceTree = "<group>"; };
+		3B8947A3708801ACD161C4B65C272F27 /* CSDownLoaderFileTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSDownLoaderFileTool.h; path = CSDownLoader/Classes/CSDownLoaderFileTool.h; sourceTree = "<group>"; };
+		4B202B91790CDC85AB18CCB968913513 /* CSDownLoader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CSDownLoader.xcconfig; sourceTree = "<group>"; };
+		506F17E77B9080E710DE240E951E6528 /* NSString+CSDownLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+CSDownLoader.m"; path = "CSDownLoader/Classes/NSString+CSDownLoader.m"; sourceTree = "<group>"; };
+		52A0AE4FA8821BD22375697182191317 /* CSDownLoaderFileTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSDownLoaderFileTool.m; path = CSDownLoader/Classes/CSDownLoaderFileTool.m; sourceTree = "<group>"; };
+		5425E0B1F18E64A244C8AD412333DC45 /* CSDownLoadManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSDownLoadManager.m; path = CSDownLoader/Classes/CSDownLoadManager.m; sourceTree = "<group>"; };
 		6AC82DCBA3D0314E7B1D309BAA17EA88 /* Pods-CSDownLoader_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CSDownLoader_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		719EB66AAB47CA8D2F71940CF597FF20 /* NSString+CSDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CSDownLoader.h"; path = "CSDownLoader/Classes/NSString+CSDownLoader.h"; sourceTree = "<group>"; };
+		828A478E8055C5FF3B18DEABBA222499 /* CSDownLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CSDownLoader.framework; path = CSDownLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87651C8CA79AA737E52533AF3A0B17B7 /* Pods-CSDownLoader_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CSDownLoader_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		90DC0B0BAEC8B074706A99E7FB10913A /* Pods-CSDownLoader_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CSDownLoader_Tests-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		942F420DF1672E065546BD0EBC910F07 /* CSDownLoader.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CSDownLoader.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DC2BEF7594481874458A4F40CA92061 /* CSDownLoader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CSDownLoader-prefix.pch"; sourceTree = "<group>"; };
+		A28522574FED3563F254DA815F599743 /* CSDownLoader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CSDownLoader-umbrella.h"; sourceTree = "<group>"; };
 		A747E822C699A011D287034B400778BA /* Pods-CSDownLoader_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CSDownLoader_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AEFC484B158C92B50F69B8897612FDA3 /* CSDownLoader */ = {isa = PBXFileReference; includeInIndex = 1; name = CSDownLoader; path = CSDownLoader/Products/CSDownLoader; sourceTree = "<group>"; };
+		AB4E9A632BE89DD67C03BEC1426A80D5 /* Pods_CSDownLoader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CSDownLoader_Example.framework; path = "Pods-CSDownLoader_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA79646BAEB0999EA620076A1191D66 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		B01201378B441EAC4C06D90E8D62D24D /* Pods-CSDownLoader_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CSDownLoader_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B67435A510FC801CD94FB92EDFBBADD0 /* CSDownLoadManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSDownLoadManager.h; path = CSDownLoader/Classes/CSDownLoadManager.h; sourceTree = "<group>"; };
 		BA030CAD31286224661E9F059ADA2070 /* Pods-CSDownLoader_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CSDownLoader_Example.modulemap"; sourceTree = "<group>"; };
 		BE997EF676B33FA9CF7509E40B5713BA /* Pods-CSDownLoader_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CSDownLoader_Example-dummy.m"; sourceTree = "<group>"; };
+		BEAC5E9F06E38347EC5800B2E9BA02A0 /* CSDownLoadManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSDownLoadManager.h; path = CSDownLoader/Classes/CSDownLoadManager.h; sourceTree = "<group>"; };
+		C0F66C26AE7ACB2F271C0D420AC05D79 /* NSString+CSDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CSDownLoader.h"; path = "CSDownLoader/Classes/NSString+CSDownLoader.h"; sourceTree = "<group>"; };
+		C49B46D2D5AD1567CAF6A86EEF8B6D50 /* CSDownLoader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CSDownLoader-dummy.m"; sourceTree = "<group>"; };
 		C69FA7E3C95D6F031380DC70D642CC89 /* Pods-CSDownLoader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CSDownLoader_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C928D7DB77C607272C3A7FEC5CBB5EA0 /* CSDownLoader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CSDownLoader.modulemap; sourceTree = "<group>"; };
+		D10A4091E654211A47EDF1113FEFE6B0 /* CSDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSDownLoader.h; path = CSDownLoader/Classes/CSDownLoader.h; sourceTree = "<group>"; };
 		D34B899AA2C2FB0105946F58C24AE362 /* Pods-CSDownLoader_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CSDownLoader_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D941C52CD894A55016C56E6505E1A17B /* Pods-CSDownLoader_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CSDownLoader_Tests.modulemap"; sourceTree = "<group>"; };
+		EAFF135CD2CFD0A15F5131FE17538458 /* Pods_CSDownLoader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CSDownLoader_Tests.framework; path = "Pods-CSDownLoader_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3EDD217A713F95CE0D9E4DB010C1B7D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,34 +97,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2F572636BFF9702526824FE9ED7EC75A /* Frameworks */ = {
+		55C710EAAC7C8F20A5C5B82DD952ABBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83CB3235D90C2D16FD9E69AB5E9572FB /* Foundation.framework in Frameworks */,
+				07F0AC582C54DB99ECD6229A9C4366D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848A588901E0B01281AFC90EF96363FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45F63D7A6FBAE4C7C7F57C5C872D4058 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		076093D329BDB7D5E2CB0B401E9179B6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				406AB48DC3788077723A1D7EB2880D25 /* Pods_CSDownLoader_Example.framework */,
-				2306C9612EA69BD2BCD6D9FF887A482B /* Pods_CSDownLoader_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		1E7CAF4F93E22FF172CAA979114A2E28 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AEFC484B158C92B50F69B8897612FDA3 /* CSDownLoader */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3075F92B4E894BA5E408616B1A1A0798 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +123,24 @@
 				4169F67DB0FBCE1576D9256914CD95AB /* Pods-CSDownLoader_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3FE7CECC38330AFD33445AF7A3971C07 /* CSDownLoader */ = {
+			isa = PBXGroup;
+			children = (
+				D10A4091E654211A47EDF1113FEFE6B0 /* CSDownLoader.h */,
+				26C08E83EB014C803560E56FE592F372 /* CSDownLoader.m */,
+				3B8947A3708801ACD161C4B65C272F27 /* CSDownLoaderFileTool.h */,
+				52A0AE4FA8821BD22375697182191317 /* CSDownLoaderFileTool.m */,
+				BEAC5E9F06E38347EC5800B2E9BA02A0 /* CSDownLoadManager.h */,
+				5425E0B1F18E64A244C8AD412333DC45 /* CSDownLoadManager.m */,
+				C0F66C26AE7ACB2F271C0D420AC05D79 /* NSString+CSDownLoader.h */,
+				506F17E77B9080E710DE240E951E6528 /* NSString+CSDownLoader.m */,
+				8D216E5C6E67BE95562CCE8E703277DC /* Pod */,
+				E606DD6CEB1CB1C47972D3CDAD025BCB /* Support Files */,
+			);
+			name = CSDownLoader;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		4169F67DB0FBCE1576D9256914CD95AB /* Pods-CSDownLoader_Tests */ = {
@@ -132,20 +169,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		4FE5E814FA1DF7FAD752B8AD2CFE2ABA /* CSDownLoader */ = {
-			isa = PBXGroup;
-			children = (
-				67A0422464E916AADF8F38615F941D50 /* CSDownLoader.h */,
-				3BC049356A2CA97698F855EC9F00B9E8 /* CSDownLoaderFileTool.h */,
-				B67435A510FC801CD94FB92EDFBBADD0 /* CSDownLoadManager.h */,
-				719EB66AAB47CA8D2F71940CF597FF20 /* NSString+CSDownLoader.h */,
-				1E7CAF4F93E22FF172CAA979114A2E28 /* Frameworks */,
-				749C5F2EEDCC138C88F286C471387EAC /* Pod */,
-			);
-			name = CSDownLoader;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		5D6B6AC6F81B570598CAF8026725DC42 /* Pods-CSDownLoader_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,33 +187,33 @@
 			path = "Target Support Files/Pods-CSDownLoader_Example";
 			sourceTree = "<group>";
 		};
-		749C5F2EEDCC138C88F286C471387EAC /* Pod */ = {
+		7861C6D3BCBFF3643AEBF90B50BE3456 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				18EAD31ED0F520EE2D26615315CBF8BA /* CSDownLoader.podspec */,
-				0ED9A797AEEC8E46032B1FB398388CF7 /* LICENSE */,
-				50C7D0CCCD4B0F44D4E2E82150805D34 /* README.md */,
+				3FE7CECC38330AFD33445AF7A3971C07 /* CSDownLoader */,
 			);
-			name = Pod;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				91656C38CD9EDA08EE67A1BE908C6D42 /* Development Pods */,
+				7861C6D3BCBFF3643AEBF90B50BE3456 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				076093D329BDB7D5E2CB0B401E9179B6 /* Products */,
+				FF09F10F6357B9B764C1B698ED6F210E /* Products */,
 				3075F92B4E894BA5E408616B1A1A0798 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		91656C38CD9EDA08EE67A1BE908C6D42 /* Development Pods */ = {
+		8D216E5C6E67BE95562CCE8E703277DC /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				4FE5E814FA1DF7FAD752B8AD2CFE2ABA /* CSDownLoader */,
+				942F420DF1672E065546BD0EBC910F07 /* CSDownLoader.podspec */,
+				F3EDD217A713F95CE0D9E4DB010C1B7D /* LICENSE */,
+				AFA79646BAEB0999EA620076A1191D66 /* README.md */,
 			);
-			name = "Development Pods";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -199,6 +222,30 @@
 				44D5347904CF754D6785B84253F2574A /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E606DD6CEB1CB1C47972D3CDAD025BCB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C928D7DB77C607272C3A7FEC5CBB5EA0 /* CSDownLoader.modulemap */,
+				4B202B91790CDC85AB18CCB968913513 /* CSDownLoader.xcconfig */,
+				C49B46D2D5AD1567CAF6A86EEF8B6D50 /* CSDownLoader-dummy.m */,
+				9DC2BEF7594481874458A4F40CA92061 /* CSDownLoader-prefix.pch */,
+				A28522574FED3563F254DA815F599743 /* CSDownLoader-umbrella.h */,
+				13F5E96EED00A188A9DA9B369F528AE1 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CSDownLoader";
+			sourceTree = "<group>";
+		};
+		FF09F10F6357B9B764C1B698ED6F210E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				828A478E8055C5FF3B18DEABBA222499 /* CSDownLoader.framework */,
+				AB4E9A632BE89DD67C03BEC1426A80D5 /* Pods_CSDownLoader_Example.framework */,
+				EAFF135CD2CFD0A15F5131FE17538458 /* Pods_CSDownLoader_Tests.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,33 +259,64 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		470652A290F5BE73BE52EBD95A14EB0D /* Headers */ = {
+		4E71505EF3D1A349BF9CA1573F24B28D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7347A9AD13443BF4CDF8AC02F87F7B86 /* Pods-CSDownLoader_Example-umbrella.h in Headers */,
+				9D457EBBF9D8CA7BFDF49D947E442A49 /* Pods-CSDownLoader_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D951D69D17F8E130FCEE9382DCB6ED85 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70A69AA3402EDE2A60DA1B6C0FB0B68 /* CSDownLoader-umbrella.h in Headers */,
+				D576C720C39746F949647137DDA54B8D /* CSDownLoader.h in Headers */,
+				4934627CAEA24872936E6BA90711A701 /* CSDownLoaderFileTool.h in Headers */,
+				C808DF8AC96DA1530BBCF44B8D15C992 /* CSDownLoadManager.h in Headers */,
+				E150E6AD7D980BB284ADA9DFF2662C00 /* NSString+CSDownLoader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D7D2D87E38EE7C34FE6931244F828FE1 /* Pods-CSDownLoader_Example */ = {
+		2B0CC8FECC7E17352865F49B705152A9 /* CSDownLoader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D07EC95E44F71DD28DA596398D2EC988 /* Build configuration list for PBXNativeTarget "Pods-CSDownLoader_Example" */;
+			buildConfigurationList = A228DC9DFCA6F2DF3EE8A52F2802D196 /* Build configuration list for PBXNativeTarget "CSDownLoader" */;
 			buildPhases = (
-				470652A290F5BE73BE52EBD95A14EB0D /* Headers */,
-				0DE394AB14EE98AC48B2D0F7F86496FE /* Sources */,
-				2F572636BFF9702526824FE9ED7EC75A /* Frameworks */,
-				6028CCC5F6A230742FA60726ECC4A5DE /* Resources */,
+				D951D69D17F8E130FCEE9382DCB6ED85 /* Headers */,
+				A8806C82A5F22CB3C23925885A94B8FF /* Sources */,
+				55C710EAAC7C8F20A5C5B82DD952ABBB /* Frameworks */,
+				B1BFEB63B913E818CB3FC87C95C8BFBE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = CSDownLoader;
+			productName = CSDownLoader;
+			productReference = 828A478E8055C5FF3B18DEABBA222499 /* CSDownLoader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		71CA6D69C0BEB207EE74F980F3F1E16C /* Pods-CSDownLoader_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C33B7CFED0A3BD1AFCD427FCEC22941D /* Build configuration list for PBXNativeTarget "Pods-CSDownLoader_Example" */;
+			buildPhases = (
+				4E71505EF3D1A349BF9CA1573F24B28D /* Headers */,
+				26D18EDAF04CD35C51267AD5BCDEE459 /* Sources */,
+				848A588901E0B01281AFC90EF96363FB /* Frameworks */,
+				ED6CA1F2E4FA6B83723A623F581EA36A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FF616A79191DD0592FF3BCA5A1025AC /* PBXTargetDependency */,
+			);
 			name = "Pods-CSDownLoader_Example";
 			productName = "Pods-CSDownLoader_Example";
-			productReference = 406AB48DC3788077723A1D7EB2880D25 /* Pods_CSDownLoader_Example.framework */;
+			productReference = AB4E9A632BE89DD67C03BEC1426A80D5 /* Pods_CSDownLoader_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E8A05B01997B20A9466A086EFD194F0A /* Pods-CSDownLoader_Tests */ = {
@@ -257,7 +335,7 @@
 			);
 			name = "Pods-CSDownLoader_Tests";
 			productName = "Pods-CSDownLoader_Tests";
-			productReference = 2306C9612EA69BD2BCD6D9FF887A482B /* Pods_CSDownLoader_Tests.framework */;
+			productReference = EAFF135CD2CFD0A15F5131FE17538458 /* Pods_CSDownLoader_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -277,18 +355,19 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 076093D329BDB7D5E2CB0B401E9179B6 /* Products */;
+			productRefGroup = FF09F10F6357B9B764C1B698ED6F210E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D7D2D87E38EE7C34FE6931244F828FE1 /* Pods-CSDownLoader_Example */,
+				2B0CC8FECC7E17352865F49B705152A9 /* CSDownLoader */,
+				71CA6D69C0BEB207EE74F980F3F1E16C /* Pods-CSDownLoader_Example */,
 				E8A05B01997B20A9466A086EFD194F0A /* Pods-CSDownLoader_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6028CCC5F6A230742FA60726ECC4A5DE /* Resources */ = {
+		B1BFEB63B913E818CB3FC87C95C8BFBE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,14 +381,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED6CA1F2E4FA6B83723A623F581EA36A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0DE394AB14EE98AC48B2D0F7F86496FE /* Sources */ = {
+		26D18EDAF04CD35C51267AD5BCDEE459 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD5E883D54F8B078C3B60F5BC55F9B87 /* Pods-CSDownLoader_Example-dummy.m in Sources */,
+				36F6844EEA922F2ED74888799FE98C37 /* Pods-CSDownLoader_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8806C82A5F22CB3C23925885A94B8FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D7ACC1A2B77D7F7C447BD7A86402E31 /* CSDownLoader-dummy.m in Sources */,
+				C24F2AC9010F74354A121E49548A6D54 /* CSDownLoader.m in Sources */,
+				5A507C6FBF1B967EEBCD9E305282CF8C /* CSDownLoaderFileTool.m in Sources */,
+				3D5E3D22D702CC48C9695FF1120620D4 /* CSDownLoadManager.m in Sources */,
+				210628673FED0C5195B2ED33E77DCE74 /* NSString+CSDownLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,10 +422,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0FF616A79191DD0592FF3BCA5A1025AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CSDownLoader;
+			target = 2B0CC8FECC7E17352865F49B705152A9 /* CSDownLoader */;
+			targetProxy = 1A7197AEB45A10C6127F037F58A10E95 /* PBXContainerItemProxy */;
+		};
 		7E32DE099417BDD5E78DDA80DD566EAD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-CSDownLoader_Example";
-			target = D7D2D87E38EE7C34FE6931244F828FE1 /* Pods-CSDownLoader_Example */;
+			target = 71CA6D69C0BEB207EE74F980F3F1E16C /* Pods-CSDownLoader_Example */;
 			targetProxy = 247124BB3C1A1DAB92010858EC99461C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -494,11 +598,10 @@
 			};
 			name = Release;
 		};
-		7410BEEBDDEAB43597D35DB277547A08 /* Debug */ = {
+		66B77477B893E966703BB6F3E81701EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B01201378B441EAC4C06D90E8D62D24D /* Pods-CSDownLoader_Example.debug.xcconfig */;
+			baseConfigurationReference = 4B202B91790CDC85AB18CCB968913513 /* CSDownLoader.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -508,26 +611,55 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CSDownLoader_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CSDownLoader/CSDownLoader-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CSDownLoader/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CSDownLoader_Example/Pods-CSDownLoader_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/CSDownLoader/CSDownLoader.modulemap";
+				PRODUCT_MODULE_NAME = CSDownLoader;
+				PRODUCT_NAME = CSDownLoader;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		C921FECE1971F7184B3DC776871780A9 /* Release */ = {
+		78AC8293C03A2E41A287AF6462025AFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B202B91790CDC85AB18CCB968913513 /* CSDownLoader.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CSDownLoader/CSDownLoader-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CSDownLoader/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CSDownLoader/CSDownLoader.modulemap";
+				PRODUCT_MODULE_NAME = CSDownLoader;
+				PRODUCT_NAME = CSDownLoader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A01AEC1A11AB19257C660F22150F17DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C69FA7E3C95D6F031380DC70D642CC89 /* Pods-CSDownLoader_Example.release.xcconfig */;
 			buildSettings = {
@@ -595,6 +727,39 @@
 			};
 			name = Release;
 		};
+		FF65D1D88BA2D5FD6ECA402458E0D625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B01201378B441EAC4C06D90E8D62D24D /* Pods-CSDownLoader_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CSDownLoader_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CSDownLoader_Example/Pods-CSDownLoader_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -607,11 +772,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D07EC95E44F71DD28DA596398D2EC988 /* Build configuration list for PBXNativeTarget "Pods-CSDownLoader_Example" */ = {
+		A228DC9DFCA6F2DF3EE8A52F2802D196 /* Build configuration list for PBXNativeTarget "CSDownLoader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7410BEEBDDEAB43597D35DB277547A08 /* Debug */,
-				C921FECE1971F7184B3DC776871780A9 /* Release */,
+				66B77477B893E966703BB6F3E81701EB /* Debug */,
+				78AC8293C03A2E41A287AF6462025AFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C33B7CFED0A3BD1AFCD427FCEC22941D /* Build configuration list for PBXNativeTarget "Pods-CSDownLoader_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF65D1D88BA2D5FD6ECA402458E0D625 /* Debug */,
+				A01AEC1A11AB19257C660F22150F17DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

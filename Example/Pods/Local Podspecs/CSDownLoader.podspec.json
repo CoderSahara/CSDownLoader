@@ -18,6 +18,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CSDownLoader/Classes/**/*.h",
-  "vendored_frameworks": "CSDownLoader/Products/CSDownLoader"
+  "source_files": "CSDownLoader/Classes/**/*"
 }
