@@ -1,6 +1,6 @@
 {
   "name": "CSDownLoader",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "summary": "CSDownLoader.",
   "description": "一个下载组件",
   "homepage": "https://github.com/CoderSahara/CSDownLoader",
@@ -13,10 +13,11 @@
   },
   "source": {
     "git": "https://github.com/CoderSahara/CSDownLoader.git",
-    "tag": "0.1.1"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CSDownLoader/Classes/**/*"
+  "source_files": "CSDownLoader/Classes/**/*.h",
+  "vendored_frameworks": "CSDownLoader/Products/CSDownLoader.framework"
 }

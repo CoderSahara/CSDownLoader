@@ -30,7 +30,13 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'CSDownLoader/Classes/**/*'
+if ENV['IS_SOURCE'] || ENV['IS_CSDownLoader']
+    s.source_files = 'CSDownLoader/Classes/**/*'
+else
+    s.source_files = 'CSDownLoader/Classes/**/*.h'
+    s.vendored_framework = 'CSDownLoader/Products/CSDownLoader.framework'
+end
+      
   
   # s.resource_bundles = {
   #   'CSDownLoader' => ['CSDownLoader/Assets/*.png']
