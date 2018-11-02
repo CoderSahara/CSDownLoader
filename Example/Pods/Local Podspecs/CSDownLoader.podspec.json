@@ -19,5 +19,5 @@
     "ios": "8.0"
   },
   "source_files": "CSDownLoader/Classes/**/*.h",
-  "vendored_frameworks": "CSDownLoader/Products/CSDownLoader.framework"
+  "vendored_frameworks": "CSDownLoader/Products/CSDownLoader"
 }
