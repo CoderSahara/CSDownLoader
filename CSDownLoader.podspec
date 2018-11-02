@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-一个下载组件
+'一个下载组件'
                        DESC
 
   s.homepage         = 'https://github.com/CoderSahara/CSDownLoader'
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-if ENV['IS_SOURCE'] || ENV['IS_CSDownLoader']
+if ENV['IS_SOURCE'] || ENV['CSDownLoader']
     s.source_files = 'CSDownLoader/Classes/**/*'
 else
     s.source_files = 'CSDownLoader/Classes/**/*.h'
