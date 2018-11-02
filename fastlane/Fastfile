@@ -39,11 +39,10 @@ tag: tagName
 #    git push --tags
 push_git_tags
 
-#    pod repo push XXXX xxx.podspec
-pod_push(path: "#{targetName}.podspec", repo: "CSSpecs", allow_warnings: true)
-
 # 4. pod spec lint
-pod_lib_lint(allow_warnings: true)
+pod_lib_lint  #(allow_warnings: true)
 
+#    pod repo push XXXX xxx.podspec
+pod_push(path: "#{targetName}.podspec", repo: "CSSpecs")
 
 end
